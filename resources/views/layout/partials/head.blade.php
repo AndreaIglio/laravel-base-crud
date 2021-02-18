@@ -11,4 +11,4 @@
 
 <body>
 
-@include('layout.partials.navbar')
+@yield('navbar')

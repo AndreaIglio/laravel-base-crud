@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::resource('/', 'HomeController');
-
+Route::get('/', 'HomeController@index');
 
 Route::resource('blog', 'BlogController');
+
+Route::resource('contact', 'ContactController');
