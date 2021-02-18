@@ -16,7 +16,7 @@ class BlogController extends Controller
     {
         
         $posts = Post::all();
-        return view('blog', compact('posts'));
+        return view('blog.blog', compact('posts'));
 
     }
 
