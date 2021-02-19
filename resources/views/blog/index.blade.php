@@ -19,7 +19,7 @@
         <span>Author: {{$post->author}}</span>
         <div class="post_function">
             <a href=""><i class="fas fa-edit"></i></a>
-            <a href=""><i class="fas fa-eye"></i></a>
+            <a href="{{route('blog.show', $post->id,)}}"><i class="fas fa-eye"></i></a>
             <a href=""><i class="fas fa-trash"></i></a>
         </div>
     </div>

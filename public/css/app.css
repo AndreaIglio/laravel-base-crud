@@ -11059,3 +11059,11 @@ nav ul li {
   color: red;
 }
 
+.new_post .form-group label {
+  margin-top: 20px;
+}
+
+.new_post .form-group button {
+  justify-self: center;
+}
+

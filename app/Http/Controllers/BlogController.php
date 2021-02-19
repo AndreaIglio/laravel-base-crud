@@ -17,7 +17,7 @@ class BlogController extends Controller
         
         // $posts = Post::all();
         $posts = Post::latest()->get();
-        return view('blog.blog', compact('posts'));
+        return view('blog.index', compact('posts'));
 
     }
 
@@ -57,9 +57,12 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($post)
     {
-        //
+        $post_shown = Post::find($post);
+        // dd($post_shown);
+
+        return view('blog.show', compact('post_shown'));
     }
 
     /**
@@ -80,7 +83,7 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
         //
     }
@@ -91,7 +94,7 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
         //
     }

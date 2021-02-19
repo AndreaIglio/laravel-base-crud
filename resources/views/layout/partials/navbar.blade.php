@@ -6,7 +6,7 @@
                 <a href="/">Home</a>
             </li>
             <li>
-                <a href="blog">Blog</a>
+                <a href="{{route('blog.index')}}">Blog</a>
             </li>
             <li>
                 <a href="contact">Contact us</a>

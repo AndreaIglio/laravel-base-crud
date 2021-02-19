@@ -1,35 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@section('navbar')
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>Create Blog post</title>
-</head>
+@include('layout.partials.navbar')
 
-<body>
+@endsection
 
+@section('main')
+<div class="new_post">
     <form action="{{route('blog.store')}}" method="POST">
         @csrf
         <legend>New Post</legend>
 
-        <div class="form-group">
-            <input type="text" name="title">
+        <div class="form-group flex column">
             <label for="title">Title</label>
 
-            <input type="text" name="author">
+            <input type="text" name="title">
+
             <label for="author">Author</label>
-            
-            
+            <input type="text" name="author">
+
+
             <label for="body">Content</label>
             <textarea name="body" id="body" cols="30" rows="10"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
-</body>
-
-</html>
+</div>
+@endsection
