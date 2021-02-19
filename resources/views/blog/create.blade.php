@@ -15,14 +15,14 @@
         <div class="form-group flex column">
             <label for="title">Title</label>
 
-            <input type="text" name="title">
+            <input type="text" name="title" required>
 
             <label for="author">Author</label>
-            <input type="text" name="author">
+            <input type="text" name="author" required>
 
 
             <label for="body">Content</label>
-            <textarea name="body" id="body" cols="30" rows="10"></textarea>
+            <textarea name="body" id="body" cols="30" rows="10" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

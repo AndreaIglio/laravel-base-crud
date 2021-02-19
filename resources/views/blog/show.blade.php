@@ -10,9 +10,9 @@
 
 <div class="posts flex column">
     <div class="post_card flex column">
-        <h2>{{$post_shown->title}}</h2>
-        <p>{{$post_shown->content}}</p>
-        <span>Author: {{$post_shown->author}}</span>
+        <h2>{{$post->title}}</h2>
+        <p>{{$post->content}}</p>
+        <span>Author: {{$post->author}}</span>
         
     </div>
 </div>

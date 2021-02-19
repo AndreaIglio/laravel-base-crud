@@ -18,9 +18,17 @@
         <p>{{$post->content}}</p>
         <span>Author: {{$post->author}}</span>
         <div class="post_function">
-            <a href=""><i class="fas fa-edit"></i></a>
-            <a href="{{route('blog.show', $post->id,)}}"><i class="fas fa-eye"></i></a>
-            <a href=""><i class="fas fa-trash"></i></a>
+            <a href="{{route('blog.edit', $post->id)}}"><i class="fas fa-edit"></i></a>
+            <a href="{{route('blog.show', $post->id)}}"><i class="fas fa-eye"></i></a>
+
+            <form action="{{ route('blog.destroy', $post->id)}}" method="post">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger" type="submit">Delete</button>
+            </form>
+
+
+
         </div>
     </div>
 </div>

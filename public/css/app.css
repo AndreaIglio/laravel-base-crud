@@ -11055,8 +11055,9 @@ nav ul li {
   color: #7cb5cc;
 }
 
-.posts .post_card .post_function .fa-trash {
-  color: red;
+.new_post .form-group input,
+.new_post .form-group textarea {
+  text-transform: capitalize;
 }
 
 .new_post .form-group label {

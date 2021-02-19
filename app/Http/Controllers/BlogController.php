@@ -37,15 +37,17 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Post $post)
     {
         // dd($request->all());
         // dd('Ciao',request('title'), request('body'));
-        
+        $data = $request->all();
+        // dd($data);
+
         $post = new Post;
-        $post->title = request('title');
-        $post->content = request('body');
-        $post->author = request('author');
+        $post->title = $data['title'];
+        $post->content = $data['body'];
+        $post->author = $data['author'];
         $post->save();
         return redirect()->route('blog.index');
         
@@ -59,10 +61,9 @@ class BlogController extends Controller
      */
     public function show($post)
     {
-        $post_shown = Post::find($post);
-        // dd($post_shown);
+        $post = Post::find($post);
 
-        return view('blog.show', compact('post_shown'));
+        return view('blog.show', compact('post'));
     }
 
     /**
@@ -71,21 +72,32 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($post)
     {
-        //
+
+        $post = Post::find($post);
+        return view('blog.edit', compact('post'));
+        
     }
 
     /**
      * Update the specified resource in storage.
-     *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request,$post)
     {
-        //
+        $post = Post::find($post);
+        $post->title = request('title');
+        $post->content = request('body');
+        $post->author = request('author');
+        // dd($post);
+        $post->save();
+        return redirect()->route('blog.index');
+        
+
+
     }
 
     /**
@@ -94,8 +106,12 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($post)
     {
-        //
+        $post = Post::find($post);
+        $post->delete();
+        return redirect()->route('blog.index');
+        
+
     }
 }

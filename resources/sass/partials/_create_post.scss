@@ -2,6 +2,10 @@
 
     .form-group {
 
+        input,textarea {
+            text-transform: capitalize;
+        }
+
         label {
             margin-top: 20px;
         }
