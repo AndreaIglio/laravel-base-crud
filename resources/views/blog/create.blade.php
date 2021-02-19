@@ -14,12 +14,16 @@
 
     <form action="{{route('blog.store')}}" method="POST">
         @csrf
-        <legend>Form title</legend>
+        <legend>New Post</legend>
 
         <div class="form-group">
             <input type="text" name="title">
             <label for="title">Title</label>
 
+            <input type="text" name="author">
+            <label for="author">Author</label>
+            
+            
             <label for="body">Content</label>
             <textarea name="body" id="body" cols="30" rows="10"></textarea>
         </div>

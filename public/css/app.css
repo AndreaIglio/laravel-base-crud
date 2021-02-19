@@ -11023,12 +11023,12 @@ nav ul li {
   display: inline;
 }
 
-.blog {
+.posts {
   padding: 50px 0px;
   align-items: center;
 }
 
-.blog .post_card {
+.posts .post_card {
   background-color: white;
   width: 500px;
   border-radius: 10px;
@@ -11037,5 +11037,25 @@ nav ul li {
   border: 1px solid white;
   padding: 10px;
   box-shadow: 5px 5px 5px #aaaaaa;
+}
+
+.posts .post_card .post_function {
+  margin-top: 20px;
+}
+
+.posts .post_card .post_function i {
+  padding: 0px 10px;
+}
+
+.posts .post_card .post_function .fa-edit {
+  color: green;
+}
+
+.posts .post_card .post_function .fa-eye {
+  color: #7cb5cc;
+}
+
+.posts .post_card .post_function .fa-trash {
+  color: red;
 }
 

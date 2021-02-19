@@ -15,7 +15,8 @@ class BlogController extends Controller
     public function index()
     {
         
-        $posts = Post::all();
+        // $posts = Post::all();
+        $posts = Post::latest()->get();
         return view('blog.blog', compact('posts'));
 
     }
@@ -38,7 +39,16 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        // dd($request->all());
+        // dd('Ciao',request('title'), request('body'));
+        
+        $post = new Post;
+        $post->title = request('title');
+        $post->content = request('body');
+        $post->author = request('author');
+        $post->save();
+        return redirect()->route('blog.index');
+        
     }
 
     /**
@@ -58,7 +68,7 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
         //
     }

@@ -1,1 +1,3 @@
-@yield('main')
+<div class="container">
+    @yield('main')
+</div>
