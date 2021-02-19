@@ -17,6 +17,7 @@
     </div>
 </div>
 
+<a href="{{route('blog.create')}}" class="btn">Create new posts</a>
 
 
 @endforeach
